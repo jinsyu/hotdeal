@@ -32,7 +32,7 @@ def run():
             up_count = item.find_all("td")[-2].text
             up_count = up_count.split("-")[0]
             up_count = int(up_count)
-            if up_count >= 0:
+            if up_count >= 5:
                 if (Deal.objects.filter(link__iexact=link).count() == 0):
                     Deal(image_url=image, title=title, link=link,
                          reply_count=reply_count, up_count=up_count).save()
